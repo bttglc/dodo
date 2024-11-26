@@ -3,6 +3,7 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
 import "./App.css";
+import logo from "./assets/dodo.svg";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -34,7 +35,13 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1 className="app-title">Dodo</h1>
+
+      <h1 className="app-title">
+        <a href="https://github.com/bttglc/dodo" target="_blank" rel="noopener noreferrer">
+      <img className="app-logo" src={logo} alt="Dodo Logo" />
+      </a>
+      <p>Dodo</p>
+        </h1>
       <TodoForm onAddTodo={handleAddTodo} />
       <TodoList
         todos={todos}
