@@ -3,7 +3,7 @@ import "../styles/TodoItem.css";
 
 const TodoItem = ({ todo, onRemoveTodo, onUpdateTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedTask, setEditedTask] = useState(todo.task);
+  const [editedTask, setEditedTask] = useState(todo.title); // Use title instead of task
 
   const handleRemove = () => {
     onRemoveTodo(todo.id);
@@ -14,12 +14,12 @@ const TodoItem = ({ todo, onRemoveTodo, onUpdateTodo }) => {
   };
 
   const handleSave = () => {
-    onUpdateTodo(todo.id, editedTask);
+    onUpdateTodo(todo.id, editedTask); // Use edited title
     setIsEditing(false);
   };
 
   const handleCheckboxChange = () => {
-    onUpdateTodo(todo.id, todo.task, !todo.completed);
+    onUpdateTodo(todo.id, undefined, !todo.completed); // Toggle completed state
   };
 
   return (
@@ -41,7 +41,7 @@ const TodoItem = ({ todo, onRemoveTodo, onUpdateTodo }) => {
         <span
           className={`todo-task ${todo.completed ? "completed" : ""}`}
         >
-          {todo.task}
+          {todo.title} {/* Display title */}
         </span>
       )}
       {isEditing ? (
