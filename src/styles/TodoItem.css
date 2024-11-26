@@ -14,6 +14,11 @@
   cursor: pointer;
 }
 
+.todo-task.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
 .todo-task,
 .todo-edit-input {
   flex: 1;
@@ -24,13 +29,13 @@
   height: 32px;
   line-height: 32px;
   display: inline-block;
-  box-sizing: border-box; /* Include padding in width/height */
+  box-sizing: border-box;
 }
 
 .todo-task {
   overflow: hidden;
-  text-overflow: ellipsis; /* prevent long text from overflowing */
-  white-space: nowrap; /* keep text on one line */
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .todo-edit-input {

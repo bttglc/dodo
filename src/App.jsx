@@ -40,7 +40,6 @@ const App = () => {
         <a href="https://github.com/bttglc/dodo" target="_blank" rel="noopener noreferrer">
       <img className="app-logo" src={logo} alt="Dodo Logo" />
       </a>
-      <p>Dodo</p>
         </h1>
       <TodoForm onAddTodo={handleAddTodo} />
       <TodoList
