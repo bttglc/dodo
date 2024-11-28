@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     // Fetch tasks from the backend
-    fetch("http://dodo-backend-service:8080/tasks")
+    fetch("http://dodo-backend-service.default.svc.cluster.local:8080/tasks")
       .then((response) => response.json())
       .then((data) => setTodos(data))
       .catch((error) => console.error("Error fetching tasks:", error));
@@ -18,7 +18,7 @@ const App = () => {
 
   const handleAddTodo = (newTask) => {
     // Add task to backend
-    fetch("http://dodo-backend-service:8080/tasks", {
+    fetch("http://dodo-backend-service.default.svc.cluster.local:8080/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const App = () => {
 
   const handleRemoveTodo = (id) => {
     // Remove task from backend
-    fetch(`http://dodo-backend-service:8080/tasks/${id}`, {
+    fetch(`http://dodo-backend-service.default.svc.cluster.local:8080/tasks/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -51,7 +51,7 @@ const App = () => {
     if (newTask !== undefined) updatedFields.title = newTask;
     if (completed !== null) updatedFields.completed = completed;
 
-    fetch(`http://dodo-backend-service:8080/tasks/${id}`, {
+    fetch(`http://dodo-backend-service.default.svc.cluster.local:8080/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

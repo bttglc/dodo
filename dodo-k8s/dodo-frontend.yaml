@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dodo-frontend
-        image: gianlucabottiglieri/dodo-frontend:1.13
+        image: gianlucabottiglieri/dodo-frontend:1.17
         ports:
         - containerPort: 80
         resources:
