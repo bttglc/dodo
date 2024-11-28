@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     // Fetch tasks from the backend
-    fetch("http://dodo-backend-service:8080")
+    fetch("http://dodo-backend-service:8080/tasks")
       .then((response) => response.json())
       .then((data) => setTodos(data))
       .catch((error) => console.error("Error fetching tasks:", error));
@@ -18,7 +18,7 @@ const App = () => {
 
   const handleAddTodo = (newTask) => {
     // Add task to backend
-    fetch("http://dodo-backend-service:8080", {
+    fetch("http://dodo-backend-service:8080/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const App = () => {
         }
       })
       .catch((error) => console.error("Error deleting task:", error));
-  };xs
+  };
 
   const handleUpdateTodo = (id, newTask, completed = null) => {
     // Update task in backend

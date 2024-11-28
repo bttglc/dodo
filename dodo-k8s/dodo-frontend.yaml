@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dodo-frontend
-        image: gianlucabottiglieri/dodo-frontend:1.6
+        image: gianlucabottiglieri/dodo-frontend:1.13
         ports:
         - containerPort: 80
         resources:
@@ -40,4 +40,4 @@ spec:
     - protocol: TCP
       port: 80       # External port (unchanged)
       targetPort: 80   # Forward to container port 80
-  type: ClusterIP
+  type: LoadBalancer
