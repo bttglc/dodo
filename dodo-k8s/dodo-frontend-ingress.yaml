@@ -8,10 +8,19 @@ spec:
   rules:
   - http:
       paths:
+      # Route for frontend
       - path: /
         pathType: Prefix
         backend:
           service:
             name: dodo-frontend-service
             port:
-              number: 80
+              number: 3000
+      # Route for backend
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: dodo-backend-service
+            port:
+              number: 8080

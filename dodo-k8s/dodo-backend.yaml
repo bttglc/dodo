@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dodo-backend
-        image: gianlucabottiglieri/dodo-backend:1.4
+        image: gianlucabottiglieri/dodo-backend:1.10
         ports:
         - containerPort: 8080
         env:
