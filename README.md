@@ -4,6 +4,12 @@ Dodo is a simple to do list with CRUD functionality.
 
 [![Watch a preview](https://img.youtube.com/vi/Qv-iC_rcv58/0.jpg)](https://www.youtube.com/watch?v=Qv-iC_rcv58)
 
+## Installation
+
+If you are on Linux/MacOS, download the repo and run setup.sh.
+
+Windows does not currently have an automated setup, but you should still manage to build everything yourself.
+
 ## Tech stack
 
 * Vite + React
