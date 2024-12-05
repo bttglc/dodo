@@ -8,7 +8,7 @@ Dodo is a simple to do list with CRUD functionality.
 
 If you are on Linux/MacOS, download the repo and run setup.sh.
 
-Windows does not currently have an automated setup, but you should still manage to build everything yourself.
+Windows does not currently have an automated setup, but one should still be able to build everything yourself.
 
 ## Tech stack
 
