@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dodo-backend-deployment
+  labels:
+    app: dodo-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dodo-backend
+  template:
+    metadata:
+      labels:
+        app: dodo-backend
+    spec:
+      containers:
+      - name: dodo-backend
+        image: gianlucabottiglieri/dodo-backend:2.1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://postgres-service:5432/dodo
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-user
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-password
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: dodo-backend-service
+spec:
+  selector:
+    app: dodo-backend
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

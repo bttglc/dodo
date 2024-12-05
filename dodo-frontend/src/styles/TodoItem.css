@@ -1,0 +1,97 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-task.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-task,
+.todo-edit-input {
+  flex: 1;
+  font-size: 16px;
+  word-break: break-word;
+  width: 100%;
+  max-width: 400px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.todo-task {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo-edit-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.todo-edit-button,
+.todo-save-button,
+.todo-remove-button {
+  margin-left: 10px;
+  padding: 5px 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  width: 60px; /* fixed button width for Edit and Save, otherwise it becomes deformed */
+}
+
+.todo-edit-button {
+  background-color: #fd7e14;
+  color: #fff;
+}
+
+.todo-edit-button:hover {
+  background-color: #e16d0b;
+  transform: scale(1.05);
+}
+
+.todo-save-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.todo-save-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.todo-remove-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.todo-remove-button:hover {
+  background-color: #b02a37;
+  transform: scale(1.05);
+}
+
+/* Add space between Edit and Delete buttons */
+.todo-edit-button,
+.todo-remove-button,
+.todo-save-button {
+  margin-right: 10px;
+}

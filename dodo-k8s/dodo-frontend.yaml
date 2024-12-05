@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dodo-frontend-deployment
+  labels:
+    app: dodo-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dodo-frontend
+  template:
+    metadata:
+      labels:
+        app: dodo-frontend
+    spec:
+      containers:
+      - name: dodo-frontend
+        image: gianlucabottiglieri/dodo-frontend:2.0
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: dodo-frontend-service
+spec:
+  selector:
+    app: dodo-frontend
+  ports:
+    - protocol: TCP
+      port: 3000       # External port (unchanged)
+      targetPort: 3000   # Forward to container port 80
+  type: LoadBalancer
