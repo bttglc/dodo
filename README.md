@@ -17,11 +17,13 @@ Windows does not currently have an automated setup, but one should still be able
 * PostgresSQL
 * Docker
 * Kubernetes
+* [TODO] Azure
 * [TODO] Jenkins
 * [TODO] Helm
 
 ## To-do
 
+* Deploy cluster on Azure
 * Create an Ingress on the cluster to handle external communication to the front-end
 * Test with Jenkins
 * Create Helmfile
